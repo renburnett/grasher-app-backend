@@ -1,7 +1,68 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+ron = User.create(name: "ron", email: "r@r.com", password: "123", budget: 132.44)
+don = User.create(name: "don", email: "d@d.com", password: "123", budget: 666.00)
+
+kitchenFridge = Fridge.create(
+                                name: "Kitchen Fridge", 
+                                user: don,
+                                food_capacity: 8,
+                                drink_capacity: 10, 
+                                is_full: false, 
+                                total_items_value: 128.92
+                                )
+
+basementFridge = Fridge.create(
+                              name: "Basement Fridge", 
+                              user: ron,
+                              food_capacity: 10,
+                              drink_capacity: 12, 
+                              is_full: false, 
+                              total_items_value: 188.41
+                              )
+
+                              
+# Seed basement fridge tings
+basementFridge.food_items.create(
+                                  name: "pear",
+                                  is_drink: false,
+                                  price: 1.32,
+                                  expiration_date: DateTime.new(2019, 11, 25, 9, 23, 43)
+                                )
+
+basementFridge.food_items.create(
+                                  name: "lunchable",
+                                  is_drink: false,
+                                  price: 3.63,
+                                  expiration_date: DateTime.new(2019, 11, 26, 11, 50, 13)
+                                )
+
+basementFridge.food_items.create(
+                                  name: "apple juice",
+                                  is_drink: true,
+                                  price: 3.80,
+                                  expiration_date: DateTime.new(2019, 11, 24, 12, 16, 59)
+                                )
+
+
+# Seed kitchen fridge tings
+kitchenFridge.food_items.create(
+                                  name: "1lb of potatoes",
+                                  is_drink: false,
+                                  price: 6.04,
+                                  expiration_date: DateTime.new(2019, 11, 25, 9, 23, 43)
+                                )
+
+
+kitchenFridge.food_items.create(
+                                  name: "beer",
+                                  is_drink: true,
+                                  price: 12.93,
+                                  expiration_date: DateTime.new(2020, 11, 26, 12, 50, 55)
+                                )
+
+kitchenFridge.food_items.create(
+                                  name: "gogurt box",
+                                  is_drink: true,
+                                  price: 8.75,
+                                  expiration_date: DateTime.new(2020, 1, 24, 12, 16, 59)
+                                )
