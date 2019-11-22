@@ -1,4 +1,8 @@
 
+User.destroy_all
+Fridge.destroy_all
+FoodItem.destroy_all
+
 ron = User.create(name: "ron", email: "r@r.com", password: "123", budget: 132.44)
 don = User.create(name: "don", email: "d@d.com", password: "123", budget: 666.00)
 
@@ -20,7 +24,7 @@ basementFridge = Fridge.create(
                               total_items_value: 188.41
                               )
 
-                              
+
 # Seed basement fridge tings
 basementFridge.food_items.create(
                                   name: "pear",
