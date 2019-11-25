@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_11_21_214753) do
   create_table "food_items", force: :cascade do |t|
     t.string "name"
     t.boolean "is_drink"
+    t.boolean "is_processed"
     t.float "price"
     t.datetime "expiration_date"
     t.bigint "fridge_id", null: false
