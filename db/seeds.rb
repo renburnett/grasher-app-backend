@@ -10,7 +10,7 @@ kitchenFridge = Fridge.create(
   name: "Kitchen Fridge", 
   user: don,
   food_capacity: 8,
-  drink_capacity: 10, 
+  drink_capacity: 10,
   is_full: false, 
   total_items_value: 128.92
 )
@@ -37,7 +37,7 @@ garageFridge = Fridge.create(
 basementFridge.food_items.create(
   name: "pear",
   is_drink: false,
-  is_processed: false,
+  food_type: "fruit",
   price: 1.32,
   expiration_date: DateTime.new(2019, 11, 25, 9, 23, 43)
 )
@@ -45,7 +45,7 @@ basementFridge.food_items.create(
 basementFridge.food_items.create(
   name: "lunchable",
   is_drink: false,
-  is_processed: true,
+  food_type: "processed",
   price: 3.63,
   expiration_date: DateTime.new(2019, 11, 26, 11, 50, 13)
 )
@@ -53,7 +53,7 @@ basementFridge.food_items.create(
 basementFridge.food_items.create(
   name: "apple juice",
   is_drink: true,
-  is_processed: true,
+  food_type: "processed",
   price: 3.80,
   expiration_date: DateTime.new(2019, 11, 24, 12, 16, 59)
 )
@@ -62,7 +62,7 @@ basementFridge.food_items.create(
 kitchenFridge.food_items.create(
   name: "1lb of potatoes",
   is_drink: false,
-  is_processed: false,
+  food_type: "vegetable",
   price: 6.04,
   expiration_date: DateTime.new(2019, 11, 25, 9, 23, 43)
 )
@@ -70,7 +70,7 @@ kitchenFridge.food_items.create(
 kitchenFridge.food_items.create(
   name: "soylent green 12pk",
   is_drink: true,
-  is_processed: true,
+  food_type: "processed",
   price: 12.93,
   expiration_date: DateTime.new(2020, 11, 26, 12, 50, 55)
 )
@@ -78,7 +78,7 @@ kitchenFridge.food_items.create(
 kitchenFridge.food_items.create(
   name: "gogurt multipack",
   is_drink: true,
-  is_processed: true,
+  food_type: "dairy",
   price: 8.75,
   expiration_date: DateTime.new(2020, 1, 24, 12, 16, 59)
 )
@@ -87,7 +87,7 @@ kitchenFridge.food_items.create(
 garageFridge.food_items.create(
       name: "salami",
       is_drink: false,
-      is_processed: true,
+      food_type: "meat",
       price: 6.78,
       expiration_date: DateTime.new(2019, 12, 29, 1, 33, 49)
     )
@@ -95,7 +95,7 @@ garageFridge.food_items.create(
 garageFridge.food_items.create(
       name: "ice cream",
       is_drink: false,
-      is_processed: true,
+      food_type: "dairy",
       price: 5.37,
       expiration_date: DateTime.new(2020, 02, 15, 19, 52, 43)
     )
@@ -103,7 +103,7 @@ garageFridge.food_items.create(
 garageFridge.food_items.create(
       name: "wine",
       is_drink: true,
-      is_processed: true,
+      food_type: "processed",
       price: 10.61,
       expiration_date: DateTime.new(2020, 03, 04, 23, 33, 31)
     )
