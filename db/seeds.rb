@@ -39,6 +39,7 @@ basementFridge.food_items.create(
   is_drink: false,
   food_type: "fruit",
   price: 1.32,
+  quantity: 1,
   expiration_date: DateTime.new(2019, 11, 25, 9, 23, 43)
 )
 
@@ -47,6 +48,7 @@ basementFridge.food_items.create(
   is_drink: false,
   food_type: "processed",
   price: 3.63,
+  quantity: 1,
   expiration_date: DateTime.new(2019, 11, 26, 11, 50, 13)
 )
 
@@ -55,6 +57,7 @@ basementFridge.food_items.create(
   is_drink: true,
   food_type: "processed",
   price: 3.80,
+  quantity: 1,
   expiration_date: DateTime.new(2019, 11, 24, 12, 16, 59)
 )
 
@@ -64,6 +67,7 @@ kitchenFridge.food_items.create(
   is_drink: false,
   food_type: "vegetable",
   price: 6.04,
+  quantity: 1,
   expiration_date: DateTime.new(2019, 11, 25, 9, 23, 43)
 )
 
@@ -72,6 +76,7 @@ kitchenFridge.food_items.create(
   is_drink: true,
   food_type: "processed",
   price: 12.93,
+  quantity: 1,
   expiration_date: DateTime.new(2020, 11, 26, 12, 50, 55)
 )
 
@@ -80,6 +85,7 @@ kitchenFridge.food_items.create(
   is_drink: true,
   food_type: "dairy",
   price: 8.75,
+  quantity: 1,
   expiration_date: DateTime.new(2020, 1, 24, 12, 16, 59)
 )
 
@@ -89,6 +95,7 @@ garageFridge.food_items.create(
       is_drink: false,
       food_type: "meat",
       price: 6.78,
+      quantity: 1,
       expiration_date: DateTime.new(2019, 12, 29, 1, 33, 49)
     )
 
@@ -97,6 +104,7 @@ garageFridge.food_items.create(
       is_drink: false,
       food_type: "dairy",
       price: 5.37,
+      quantity: 1,
       expiration_date: DateTime.new(2020, 02, 15, 19, 52, 43)
     )
 
@@ -105,5 +113,6 @@ garageFridge.food_items.create(
       is_drink: true,
       food_type: "processed",
       price: 10.61,
+      quantity: 1,
       expiration_date: DateTime.new(2020, 03, 04, 23, 33, 31)
     )
