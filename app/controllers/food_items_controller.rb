@@ -25,7 +25,7 @@ class FoodItemsController < ApplicationController
   end
 
   def food_params
-    params.require(:food_item).permit(:name, :is_drink, :price, :food_type, :expiration_date, :fridge_id, :id)
+    params.require(:food_item).permit(:name, :is_drink, :price, :food_type, :expiration_date, :fridge_id, :id, :quantity)
   end
 
 end

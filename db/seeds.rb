@@ -40,7 +40,7 @@ basementFridge.food_items.create(
   food_type: "fruit",
   price: 1.32,
   quantity: 1,
-  expiration_date: DateTime.new(2019, 11, 25, 9, 23, 43)
+  expiration_date: DateTime.parse('December 25, 2019 03:24:00')
 )
 
 basementFridge.food_items.create(
@@ -49,7 +49,7 @@ basementFridge.food_items.create(
   food_type: "processed",
   price: 3.63,
   quantity: 1,
-  expiration_date: DateTime.new(2019, 11, 26, 11, 50, 13)
+  expiration_date: DateTime.parse('December 6, 2019 03:24:00')
 )
 
 basementFridge.food_items.create(
@@ -58,7 +58,16 @@ basementFridge.food_items.create(
   food_type: "processed",
   price: 3.80,
   quantity: 1,
-  expiration_date: DateTime.new(2019, 11, 24, 12, 16, 59)
+  expiration_date: DateTime.parse('December 7, 2019 03:24:00')
+)
+
+basementFridge.food_items.create(
+  name: "pinapple",
+  is_drink: false,
+  food_type: "fruit",
+  price: 10.61,
+  quantity: 1,
+  expiration_date: DateTime.parse('December 6, 2019 03:24:00')
 )
 
 # Seed kitchen fridge tings
@@ -68,7 +77,7 @@ kitchenFridge.food_items.create(
   food_type: "vegetable",
   price: 6.04,
   quantity: 1,
-  expiration_date: DateTime.new(2019, 11, 25, 9, 23, 43)
+  expiration_date: DateTime.parse('December 31, 2019 03:24:00')
 )
 
 kitchenFridge.food_items.create(
@@ -77,7 +86,7 @@ kitchenFridge.food_items.create(
   food_type: "processed",
   price: 12.93,
   quantity: 1,
-  expiration_date: DateTime.new(2020, 11, 26, 12, 50, 55)
+  expiration_date: DateTime.parse('December 17, 2019 03:24:00')
 )
 
 kitchenFridge.food_items.create(
@@ -86,33 +95,33 @@ kitchenFridge.food_items.create(
   food_type: "dairy",
   price: 8.75,
   quantity: 1,
-  expiration_date: DateTime.new(2020, 1, 24, 12, 16, 59)
+  expiration_date: DateTime.parse('December 17, 2019 03:24:00')
 )
 
 # Seed garage fridge tings
 garageFridge.food_items.create(
-      name: "salami",
-      is_drink: false,
-      food_type: "meat",
-      price: 6.78,
-      quantity: 1,
-      expiration_date: DateTime.new(2019, 12, 29, 1, 33, 49)
-    )
+  name: "salami",
+  is_drink: false,
+  food_type: "meat",
+  price: 6.78,
+  quantity: 1,
+  expiration_date: DateTime.parse('December 6, 2019 03:24:00')
+)
 
 garageFridge.food_items.create(
-      name: "ice cream",
-      is_drink: false,
-      food_type: "dairy",
-      price: 5.37,
-      quantity: 1,
-      expiration_date: DateTime.new(2020, 02, 15, 19, 52, 43)
-    )
+  name: "ice cream",
+  is_drink: false,
+  food_type: "dairy",
+  price: 5.37,
+  quantity: 1,
+  expiration_date: DateTime.parse('December 7, 2019 00:24:00')
+)
 
 garageFridge.food_items.create(
-      name: "wine",
-      is_drink: true,
-      food_type: "processed",
-      price: 10.61,
-      quantity: 1,
-      expiration_date: DateTime.new(2020, 03, 04, 23, 33, 31)
-    )
+  name: "wine",
+  is_drink: true,
+  food_type: "processed",
+  price: 10.61,
+  quantity: 1,
+  expiration_date: DateTime.parse('December 30, 2019 03:24:00')
+)
