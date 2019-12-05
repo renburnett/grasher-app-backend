@@ -33,6 +33,43 @@ garageFridge = Fridge.create(
   total_items_value: 88.41
 )
 
+foodBankFridge = Fridge.create(
+  name: "Food Bank Fridge", 
+  user: ron,
+  food_capacity: 12,
+  drink_capacity: 15, 
+  is_full: false,
+  total_items_value: 188.41
+)
+
+#Seed food bank fridge tings
+foodBankFridge.food_items.create(
+  name: "pear",
+  is_drink: false,
+  food_type: "fruit",
+  price: 1.32,
+  quantity: 1,
+  expiration_date: DateTime.parse('December 29, 2019 03:24:00')
+)
+
+foodBankFridge.food_items.create(
+  name: "bagels",
+  is_drink: false,
+  food_type: "processed",
+  price: 3.63,
+  quantity: 1,
+  expiration_date: DateTime.parse('December 8, 2019 03:24:00')
+)
+
+foodBankFridge.food_items.create(
+  name: "lemonade",
+  is_drink: true,
+  food_type: "processed",
+  price: 3.80,
+  quantity: 1,
+  expiration_date: DateTime.parse('December 7, 2019 03:24:00')
+)
+
 # Seed basement fridge tings
 basementFridge.food_items.create(
   name: "pear",
@@ -44,12 +81,12 @@ basementFridge.food_items.create(
 )
 
 basementFridge.food_items.create(
-  name: "lunchable",
+  name: "dunkaroos",
   is_drink: false,
   food_type: "processed",
   price: 3.63,
   quantity: 1,
-  expiration_date: DateTime.parse('December 6, 2019 03:24:00')
+  expiration_date: DateTime.parse('December 7, 2019 03:24:00')
 )
 
 basementFridge.food_items.create(
@@ -58,7 +95,7 @@ basementFridge.food_items.create(
   food_type: "processed",
   price: 3.80,
   quantity: 1,
-  expiration_date: DateTime.parse('December 7, 2019 03:24:00')
+  expiration_date: DateTime.parse('December 8, 2019 03:24:00')
 )
 
 basementFridge.food_items.create(
