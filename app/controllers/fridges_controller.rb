@@ -8,12 +8,12 @@ class FridgesController < ApplicationController
     @fridge = Fridge.new(fridge_params)
     @fridge.save
     @fridge.user = @user
-
     render json: @fridge
   end
 
   def destroy
-  
+    @fridge = Fridge.find(params[:id])
+    @fridge.destroy
   end
 
   private
