@@ -1,3 +1,4 @@
+require 'active_support/core_ext'
 
 User.destroy_all
 Fridge.destroy_all
@@ -49,7 +50,7 @@ foodBankFridge.food_items.create(
   food_type: "fruit",
   price: 1.32,
   quantity: 1,
-  expiration_date: DateTime.parse('December 29, 2019 03:24:00')
+  expiration_date: Date.today + 55.hours
 )
 
 foodBankFridge.food_items.create(
@@ -58,7 +59,7 @@ foodBankFridge.food_items.create(
   food_type: "processed",
   price: 3.63,
   quantity: 1,
-  expiration_date: DateTime.parse('December 30, 2019 03:24:00')
+  expiration_date: Date.today + 70.hours
 )
 
 foodBankFridge.food_items.create(
@@ -67,7 +68,7 @@ foodBankFridge.food_items.create(
   food_type: "processed",
   price: 3.80,
   quantity: 1,
-  expiration_date: DateTime.parse('December 19, 2019 03:24:00')
+  expiration_date: Date.today + 50.hours
 )
 
 # Seed basement fridge tings
@@ -77,7 +78,7 @@ basementFridge.food_items.create(
   food_type: "fruit",
   price: 1.32,
   quantity: 1,
-  expiration_date: DateTime.parse('December 25, 2019 03:24:00')
+  expiration_date: Date.today + 50.hours
 )
 
 basementFridge.food_items.create(
@@ -86,7 +87,7 @@ basementFridge.food_items.create(
   food_type: "processed",
   price: 3.63,
   quantity: 1,
-  expiration_date: DateTime.parse('December 17, 2019 03:24:00')
+  expiration_date: Date.today + 70.hours
 )
 
 basementFridge.food_items.create(
@@ -95,16 +96,16 @@ basementFridge.food_items.create(
   food_type: "processed",
   price: 3.80,
   quantity: 1,
-  expiration_date: DateTime.parse('December 18, 2019 03:24:00')
+  expiration_date: Date.today + 160.hours
 )
 
 basementFridge.food_items.create(
-  name: "pinapple",
+  name: "pineapple",
   is_drink: false,
   food_type: "fruit",
   price: 10.61,
   quantity: 1,
-  expiration_date: DateTime.parse('December 16, 2019 03:24:00')
+  expiration_date: Date.today + 100.hours
 )
 
 # Seed kitchen fridge tings
@@ -114,7 +115,7 @@ kitchenFridge.food_items.create(
   food_type: "vegetable",
   price: 6.04,
   quantity: 1,
-  expiration_date: DateTime.parse('December 31, 2019 03:24:00')
+  expiration_date: Date.today + 160.hours
 )
 
 kitchenFridge.food_items.create(
@@ -123,7 +124,7 @@ kitchenFridge.food_items.create(
   food_type: "processed",
   price: 12.93,
   quantity: 1,
-  expiration_date: DateTime.parse('December 17, 2019 03:24:00')
+  expiration_date: Date.today + 50.hours
 )
 
 kitchenFridge.food_items.create(
@@ -132,7 +133,7 @@ kitchenFridge.food_items.create(
   food_type: "dairy",
   price: 8.75,
   quantity: 1,
-  expiration_date: DateTime.parse('December 27, 2019 03:24:00')
+  expiration_date: Date.today + 60.hours
 )
 
 # Seed garage fridge tings
@@ -142,7 +143,7 @@ garageFridge.food_items.create(
   food_type: "meat",
   price: 6.78,
   quantity: 1,
-  expiration_date: DateTime.parse('December 26, 2019 03:24:00')
+  expiration_date: Date.today + 50.hours
 )
 
 garageFridge.food_items.create(
@@ -151,7 +152,7 @@ garageFridge.food_items.create(
   food_type: "dairy",
   price: 5.37,
   quantity: 1,
-  expiration_date: DateTime.parse('December 27, 2019 00:24:00')
+  expiration_date: Date.today + 80.hours
 )
 
 garageFridge.food_items.create(
@@ -160,5 +161,5 @@ garageFridge.food_items.create(
   food_type: "processed",
   price: 10.61,
   quantity: 1,
-  expiration_date: DateTime.parse('December 30, 2019 03:24:00')
+  expiration_date: Date.today + 70.hours
 )
