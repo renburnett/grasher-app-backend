@@ -1,8 +1,15 @@
 require 'active_support/core_ext'
 
 User.destroy_all
+puts "dropping users. . . "
+
 Fridge.destroy_all
+puts "dropping fridges. . . "
+
 FoodItem.destroy_all
+puts "dropping food items. . . "
+
+puts "re-seeding. . ."
 
 ron = User.create(name: "ron", email: "r@r.com", password: "123", budget: 132.44)
 don = User.create(name: "don", email: "d@d.com", password: "123", budget: 666.00)
@@ -38,7 +45,7 @@ foodBankFridge = Fridge.create(
   name: "Food Bank Fridge", 
   user: ron,
   food_capacity: 12,
-  drink_capacity: 15, 
+  drink_capacity: 15,
   is_full: false,
   total_items_value: 188.41
 )
@@ -63,6 +70,33 @@ foodBankFridge.food_items.create(
 )
 
 foodBankFridge.food_items.create(
+  name: "canned tomatoes",
+  is_drink: true,
+  food_type: "processed",
+  price: 2.54,
+  quantity: 1,
+  expiration_date: Date.today + 50.hours
+)
+
+  foodBankFridge.food_items.create(
+  name: "buttermilk",
+  is_drink: true,
+  food_type: "dairy",
+  price: 5.80,
+  quantity: 1,
+  expiration_date: Date.today + 80.hours
+)
+
+foodBankFridge.food_items.create(
+  name: "ham",
+  is_drink: false,
+  food_type: "meat",
+  price: 5.80,
+  quantity: 1,
+  expiration_date: Date.today + 80.hours
+)
+
+foodBankFridge.food_items.create(
   name: "lemonade",
   is_drink: true,
   food_type: "processed",
@@ -82,12 +116,21 @@ basementFridge.food_items.create(
 )
 
 basementFridge.food_items.create(
-  name: "dunkaroos",
+  name: "kale",
   is_drink: false,
-  food_type: "processed",
+  food_type: "vegetable",
   price: 3.63,
   quantity: 1,
   expiration_date: Date.today + 70.hours
+)
+
+basementFridge.food_items.create(
+  name: "asparagus",
+  is_drink: false,
+  food_type: "vegetable",
+  price: 1.61,
+  quantity: 1,
+  expiration_date: Date.today + 50.hours
 )
 
 basementFridge.food_items.create(
