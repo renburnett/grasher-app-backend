@@ -1,3 +1,10 @@
 class FridgeSerializer < ActiveModel::Serializer
-  attributes :id, :name, :user_id, :food_items, :food_capacity, :drink_capacity, :total_items_value
+  attributes :id,
+  :user_id,
+  :name,
+  :food_capacity,
+  :drink_capacity,
+  :is_full,
+  :total_items_value,
+  :food_items
 end

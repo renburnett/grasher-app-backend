@@ -25,6 +25,15 @@ AllCops:
     - 'vendor/**/*'
     - '.git/**/*'
     - 'db/schema.rb'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'test/**/*'
+    - 'db/migrate/*'
+    - 'config.ru'
+    - 'app/serializers/*'
+    - 'app/channels/**/*'
+    - 'app/jobs/*'
+    - 'app/mailers/*'
 
 Layout/LineLength:
   Max: 99

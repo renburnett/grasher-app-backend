@@ -1,28 +1,47 @@
+# frozen_string_literal: true
+
+# Handles creation, deletion and modification of users,
+# authorization check comes from from ApplicationController
 class UsersController < ApplicationController
-  
-  def index
-    render json: User.all
+  skip_before_action :authorized, only: [:create]
+
+  def profile
+    render json: { user: UserSerializer.new(current_user) }, status: :accepted
   end
 
   def create
-    @user = User.new(user_params)
-    if @user.save
-      puts 'user created!'
+    @user = User.create(user_params)
+    if @user.valid?
+      @token = encode_token(user_id: @user.id)
+      render json: { user: UserSerializer.new(@user) }, status: :created
+    else
+      render json: { error: 'Failed to create user' }, status: :not_acceptable
     end
-    
-    render json: @user
   end
 
   def update
     @user = User.find(params[:id])
-    @user.update(user_params)
-
-    render json: @user
+    if @user.update(user_params)
+      render json: { user: UserSerializer.new(@user) }, status: :updated
+    else
+      render json: { error: 'Failed to update user' }, status: :not_acceptable
+    end
   end
 
-  private 
+  def destroy
+    # TODO: Implement
+  end
+
+  def fridges
+    @user = User.find(params[:id])
+    #@user_fridges = @user.fridges.as_json
+    @user_fridges = @user.fridges
+    render json: { fridges: FridgeSerializer.new(@user_fridges) }, status: :accepted
+  end
+
+  private
 
   def user_params
-    params.require(:user).permit(:name, :email, :budget, :password, :id)
+    params.require(:user).permit(:username, :password, :email, :phone_number)
   end
 end

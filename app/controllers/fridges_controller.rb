@@ -1,30 +1,46 @@
-class FridgesController < ApplicationController
-  
-  def index
-    render json: Fridge.all
-  end
+# frozen_string_literal: true
 
+class FridgesController < ApplicationController
   def create
     @fridge = Fridge.new(fridge_params)
-    @fridge.save
+    @user = User.find(params[:user_id])
     @fridge.user = @user
-    render json: @fridge
+    
+    if @fridge.save
+      render json: { user: FridgeSerializer.new(@fridge) }, status: :created
+    else
+      render json: { message: 'Error, failed to create fridge' }
+    end
+  end
+
+  def update
+    @fridge = Fridge.find(fridge_params[:id])
+    @fridge.update(fridge_params)
+    render json: { user: FridgeSerializer.new(@fridge) }, status: :updated
   end
 
   def destroy
     @fridge = Fridge.find(params[:id])
     @fridge.destroy
-    render json: @fridge
+    render json: { user: FridgeSerializer.new(@fridge) }, status: :destroyed
+  end
+
+  def food_items
+    @fridge = Fridge.find(params[:id])
+    @food_items = @fridge.food_items
+    render json: { food_items: FoodItemSerializer.new(food_items) }, status: :ok
   end
 
   private
 
-  def set_user
-    @user = User.find(params[:user_id])
-  end
-
   def fridge_params
-    params.require(:fridge).permit(:name, :user_id, :food_capacity, :drink_capacity, :is_full, :total_items_value)
+    params.require(:fridge).permit(
+      :name,
+      :user_id,
+      :food_capacity,
+      :drink_capacity,
+      :is_full,
+      :total_items_value
+    )
   end
-
 end
