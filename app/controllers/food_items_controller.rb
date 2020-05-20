@@ -9,7 +9,7 @@ class FoodItemsController < ApplicationController
 
     if @food_item.save
       @food_item.fridge = @fridge
-      render json: { user: FoodSerializer.new(@food_item) }, status: :created
+      render json: { food_item: FoodItemSerializer.new(@food_item) }, status: :created
     else
       render json: { message: 'Error, failed to create food item' }
     end

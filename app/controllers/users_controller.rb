@@ -3,7 +3,8 @@
 # Handles creation, deletion and modification of users,
 # authorization check comes from from ApplicationController
 class UsersController < ApplicationController
-  skip_before_action :authorized, only: [:create]
+  skip_before_action :authorized, only: [:create, :fridges]
+  #TODO: remove fridges
 
   def profile
     render json: { user: UserSerializer.new(current_user) }, status: :accepted
@@ -34,9 +35,7 @@ class UsersController < ApplicationController
 
   def fridges
     @user = User.find(params[:id])
-    #@user_fridges = @user.fridges.as_json
-    @user_fridges = @user.fridges
-    render json: { fridges: FridgeSerializer.new(@user_fridges) }, status: :accepted
+    render json: { fridges: @user.fridges }, include: 'food_items', status: :ok
   end
 
   private

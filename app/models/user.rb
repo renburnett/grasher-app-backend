@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :fridges, dependent: :destroy
+  has_many :food_items, through: :fridges, dependent: :destroy
+  accepts_nested_attributes_for :food_items
 
   validates :email, presence: true
   validates :phone_number, presence: true

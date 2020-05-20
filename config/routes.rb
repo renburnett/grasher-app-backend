@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   patch 'users/:id/update', to: 'users#update'
   get 'users/:id/fridges', to: 'users#fridges'
   
-  get 'fridges/:id/', to: 'fridges#food_items'
+  get 'fridges/:id/food_items', to: 'fridges#food_items'
 
   resources :food_items, only: [:show, :create, :update, :destroy]
   resources :fridges, only: [:show, :create, :update, :destroy]

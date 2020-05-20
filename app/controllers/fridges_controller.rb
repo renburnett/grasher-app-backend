@@ -22,13 +22,13 @@ class FridgesController < ApplicationController
   def destroy
     @fridge = Fridge.find(params[:id])
     @fridge.destroy
-    render json: { user: FridgeSerializer.new(@fridge) }, status: :destroyed
+    render json: { `Fridge ID:#{params[:id]} deleted`}, status: :destroyed
   end
 
   def food_items
     @fridge = Fridge.find(params[:id])
-    @food_items = @fridge.food_items
-    render json: { food_items: FoodItemSerializer.new(food_items) }, status: :ok
+    @food_items = @fridge.food_items.as_json
+    render json: { food_items: @food_items }, status: :ok
   end
 
   private
