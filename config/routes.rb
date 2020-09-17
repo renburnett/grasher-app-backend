@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post 'users/create', to: 'users#create'
   patch 'users/:id/update', to: 'users#update'
   get 'users/:id/fridges', to: 'users#fridges'
+
+  post 'food_items/create', to: 'food_items#create'
   
   get 'fridges/:id/food_items', to: 'fridges#food_items'
 
