@@ -27,7 +27,7 @@ class FoodItemsController < ApplicationController
     render json: @food_item
   end
 
-  def destroy
+  def delete
     @food_item = FoodItem.find(params[:id])
     @food_item.destroy
     render json: @food_item

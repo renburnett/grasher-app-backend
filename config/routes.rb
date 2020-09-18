@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get 'users/:id/fridges', to: 'users#fridges'
 
   post 'food_items/create', to: 'food_items#create'
+  patch 'food_items/:id/update', to: 'food_items#update'
+  delete 'food_items/:id/delete', to: 'food_items#delete'
   
   get 'fridges/:id/food_items', to: 'fridges#food_items'
 
