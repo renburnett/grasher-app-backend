@@ -5,5 +5,6 @@ class FoodItemSerializer < ActiveModel::Serializer
   :food_type,
   :price,
   :quantity,
-  :expiration_date
+  :expiration_date,
+  :expires_in_48h
 end

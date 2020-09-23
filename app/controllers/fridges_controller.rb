@@ -5,9 +5,8 @@ class FridgesController < ApplicationController
     @fridge = Fridge.new(fridge_params)
     @user = User.find(params[:user_id])
     @fridge.user = @user
-    
     if @fridge.save
-      render json: { user: FridgeSerializer.new(@fridge) }, status: :created
+      render json: @fridge
     else
       render json: { message: 'Error, failed to create fridge' }
     end
@@ -16,13 +15,13 @@ class FridgesController < ApplicationController
   def update
     @fridge = Fridge.find(fridge_params[:id])
     @fridge.update(fridge_params)
-    render json: { user: FridgeSerializer.new(@fridge) }, status: :updated
+    render json: @fridge
   end
 
-  def destroy
+  def delete
     @fridge = Fridge.find(params[:id])
     @fridge.destroy
-    render json: { message: `Fridge ID:#{params[:id]} deleted` }, status: :destroyed
+    render json: @fridge
   end
 
   def food_items

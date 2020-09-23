@@ -33,6 +33,11 @@ class FoodItemsController < ApplicationController
     render json: @food_item
   end
 
+  def check_if_expiring
+    @food_item = FoodItem.find(params[:id])
+    render json: @food_item.check_expiring_in_48h
+  end
+
   private
 
   def set_fridge
