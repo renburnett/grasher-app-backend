@@ -4,7 +4,7 @@ class FoodItem < ApplicationRecord
   before_save :check_expiring_in_48h
   
   belongs_to :fridge
-  enum food_type: { processed: 0, fruit: 1, vegetable: 2, meat: 3, dairy: 4 }
+  enum food_type: { processed: 0, fruit: 1, vegetable: 2, meat: 3, dairy: 4, grain: 5 }
 
   def check_expiring_in_48h
     # add 48 hours
