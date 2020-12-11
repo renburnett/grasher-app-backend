@@ -154,6 +154,15 @@ basementFridge.food_items.create(
   expiration_date: Date.today + 100.hours
 )
 
+basementFridge.food_items.create(
+  name: 'oats',
+  is_drink: false,
+  food_type: 'grain',
+  price: 5.61,
+  quantity: 1,
+  expiration_date: Date.today + 60.hours
+)
+
 # Seed kitchen fridge tings
 kitchenFridge.food_items.create(
   name: '1lb of potatoes',
@@ -182,6 +191,15 @@ kitchenFridge.food_items.create(
   expiration_date: Date.today + 60.hours
 )
 
+kitchenFridge.food_items.create(
+  name: 'white bread',
+  is_drink: false,
+  food_type: 'grain',
+  price: 3.64,
+  quantity: 1,
+  expiration_date: Date.today + 70.hours
+)
+
 # Seed garage fridge tings
 garageFridge.food_items.create(
   name: 'salami',
@@ -206,6 +224,15 @@ garageFridge.food_items.create(
   is_drink: true,
   food_type: 'processed',
   price: 10.61,
+  quantity: 1,
+  expiration_date: Date.today + 70.hours
+)
+
+garageFridge.food_items.create(
+  name: 'wheat bread',
+  is_drink: false,
+  food_type: 'grain',
+  price: 4.61,
   quantity: 1,
   expiration_date: Date.today + 70.hours
 )
