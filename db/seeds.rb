@@ -7,7 +7,7 @@ ron = User.create!(
   username: 'ron',
   email: 'r@r.com',
   password: '123',
-  phone_number: '2068675309'
+  phone_number: '2066697498'
 )
 
 don = User.create!(
