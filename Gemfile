@@ -46,7 +46,7 @@ group :development do
   gem 'rubocop', '~> 0.81.0', require: false
   gem 'rubocop-rails', '~> 2.5.1', require: false
   # Provides a better error page for Rails and other Rack apps. Includes source code inspection, a live REPL and local/instance variable inspection for all stack frames.
-  gem 'better_errors', '~> 2.1', '>= 2.1.1'
+  gem 'better_errors', '~> 2.8'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
